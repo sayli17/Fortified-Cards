@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/scrollView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#FF96D4">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FF96D4"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:weightSum="1">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:src="@mipmap/warning_icon"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/imageView2"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="174dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-thin"
+                android:text="Please note"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                android:layout_weight="0.37"
+                android:gravity="left"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/imageView2" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:paddingLeft="64dp"
+            android:paddingRight="64dp"
+            android:text="1) To find your IMEI number, dial *#06# in your smartphone or else go to Settings > About phone > IMEI number."
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textAlignment="textStart" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:paddingLeft="64dp"
+            android:paddingRight="64dp"
+            android:text="2) If you have dual-sim phone or multiple phones, register all the IMEI numbers with your bank."
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textAlignment="textStart" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:paddingLeft="64dp"
+            android:paddingRight="64dp"
+            android:text="3) Incase of lost/stolen credit/debit card or your phone, contact 1800-xxx-xxxx immediately."
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textAlignment="textStart"
+            android:layout_marginBottom="10dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:id="@+id/btnNext2"
+            android:layout_margin="10dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/mybutton"
+            android:textSize="17sp"
+            android:textColor="#FFFFFF"
+            android:onClick="onNext2"
+            android:layout_marginBottom="40dp" />
+
+    </LinearLayout>
+</ScrollView>
