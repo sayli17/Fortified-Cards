@@ -5,8 +5,14 @@
     <color name="colorAccent">#FF4081</color>
     <color name="black_overlay">#66000000</color>
 
+
     <color name="GradStart">#4B8FA1</color>
     <color name="GradEnd">#7EC0D0</color>
     <color name="ButtonText">#000000</color>
+
+    <color name="intro1">#E2FE8F</color>
+    <color name="intro2">#FF96D4</color>
+    <color name="intro3">#FFFF85</color>
+    <color name="intro4">#c08dd0</color>
 </resources>
 

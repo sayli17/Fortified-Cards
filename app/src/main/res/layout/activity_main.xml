@@ -32,26 +32,15 @@
         android:layout_gravity="center" />
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="40dp"
         android:text="Get Started"
         android:id="@+id/btnGetStarted"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/button_style"
         android:textSize="16sp"
         android:onClick="onGetStarted" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="Help"
-        android:id="@+id/btnHelp"
-        android:background="@drawable/button_style"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:textSize="16sp"
-        android:onClick="onHelp"/>
 
     <TextView
         android:layout_width="fill_parent"

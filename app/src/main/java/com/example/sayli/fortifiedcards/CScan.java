@@ -24,6 +24,8 @@ public class CScan extends AppCompatActivity implements ZXingScannerView.ResultH
     public String scanString;
     private static String[]check_imei_static;
     private static String customer_card_no;
+    TelephonyManager telephonyManager;
+
 
     // MainActivity var=new MainActivity();
 
@@ -47,11 +49,20 @@ public class CScan extends AppCompatActivity implements ZXingScannerView.ResultH
     @Override
     public void handleResult(Result rawResult) {
         scanString=getScan(rawResult);// Toast.makeText(this, "The scan result is stored in the variable scanresult  having value "+scanresult, Toast.LENGTH_SHORT ).show();
-        customer_card_no=scanString;
+
+
+        try {
+            customer_card_no=AESDecryption.decrypt(scanString);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        System.out.print(customer_card_no);
+
         String imei=getCellId();
-        Toast.makeText(this, "IMEI No. is " + imei, Toast.LENGTH_LONG).show();
-        String[]array_user=getValues(scanString);
-        Toast.makeText(this,array_user[0]+""+array_user[1],Toast.LENGTH_LONG).show();
+        //Toast.makeText(this, "IMEI No. is " + imei, Toast.LENGTH_LONG).show();
+        String[]array_user=getValues(customer_card_no);
+        //Toast.makeText(this,array_user[0]+""+array_user[1],Toast.LENGTH_LONG).show();
         Boolean proceed= check(array_user, imei);
 
         if (proceed)
@@ -93,8 +104,8 @@ public class CScan extends AppCompatActivity implements ZXingScannerView.ResultH
         }
     }
 
-    private String getCellId(){
-        TelephonyManager telephonyManager = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
+    public String getCellId(){
+        telephonyManager = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
         String cell_id=telephonyManager.getDeviceId();
         return cell_id;
     }
@@ -104,7 +115,7 @@ public class CScan extends AppCompatActivity implements ZXingScannerView.ResultH
         String []response = {"No values found!"};
         try {
             response = (String[]) new PHPConnection().execute(scan, device_id).get();
-
+            System.out.print(response);
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
@@ -131,9 +142,9 @@ public class CScan extends AppCompatActivity implements ZXingScannerView.ResultH
 
 
     /*@Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_cscan, menu);
+    public boolean onCreateOptionsMenu(Menu items) {
+        // Inflate the items; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.items.menu_cscan, items);
         return true;
     }
     @Override

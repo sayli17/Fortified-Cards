@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "817747610155",
+    "firebase_url": "https://fortified-cards.firebaseio.com",
+    "project_id": "fortified-cards",
+    "storage_bucket": "fortified-cards.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:817747610155:android:f04b5f3c2bcfb38a",
+        "android_client_info": {
+          "package_name": "com.example.sayli.fortifiedcards"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "817747610155-psdjklubsg6eq39nh1o5617p486qh1lb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJacfUU1ppuLltSJ6lotD55VkyHsrWUxM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
